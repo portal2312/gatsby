@@ -162,3 +162,7 @@ Apply `.vscode/launch.json`:
 2.  Apply [`eslint-plugin-prettier`](https://github.com/prettier/eslint-plugin-prettier) in the eslint configuration file.
 
 3.  Apply[`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier) in the eslint configuration file.
+
+## Setup deploy on workspace
+
+https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/how-gatsby-works-with-github-pages/#deploying-to-a-path-with-pathprefix

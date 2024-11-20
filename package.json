@@ -7,6 +7,7 @@
   "keywords": [
     "gatsby"
   ],
+  "homepage": "https://portal2312.github.io/gatsby",
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
@@ -14,7 +15,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
-    "preinstall": "npx only-allow pnpm"
+    "preinstall": "npx only-allow pnpm",
+    "deploy": "gatsby build --prefix-paths && gh-pages --no-history --dist public"
   },
   "dependencies": {
     "@mdx-js/react": "^3.1.0",
