@@ -147,3 +147,18 @@ Apply `.vscode/launch.json`:
     ```shell
     pnpm add --save-dev eslint-plugin-flowtype
     ```
+
+## Setup prettier on workspace
+
+1.  Install
+
+    ```shell
+    pnpm add --save-dev prettier \
+    eslint-plugin-prettier \
+    eslint-config-prettier \
+    @trivago/prettier-plugin-sort-imports
+    ```
+
+2.  Apply [`eslint-plugin-prettier`](https://github.com/prettier/eslint-plugin-prettier) in the eslint configuration file.
+
+3.  Apply[`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier) in the eslint configuration file.
