@@ -47,3 +47,66 @@
 Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
 
 [<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
+
+## Migrate npm to pnpm
+
+Migrate packages:
+
+```shell
+rm -rf node_modules
+pnpm import
+rm package-lock.json
+pnpm install
+```
+
+[Only allow pnpm](https://pnpm.io/only-allow-pnpm), `package.json`:
+
+```json
+{
+  "scripts": {
+    "preinstall": "npx only-allow pnpm"
+  }
+}
+```
+
+Apply `.vscode/launch.json`:
+
+```json
+{
+  "version": "0.2.0",
+  "configurations": [
+    // Gatsby Debugging the Build Process:: VS Code Debugger (Manual Config)
+    // https://www.gatsbyjs.com/docs/debugging-the-build-process/#vs-code-debugger-manual-config
+    {
+      "name": "Gatsby develop",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/.bin/gatsby",
+      "args": ["develop"],
+      "skipFiles": ["<node_internals>/**"],
+      "env": {
+        "PARCEL_WORKERS": "0",
+        "GATSBY_CPU_COUNT": "1"
+      },
+      // https://code.visualstudio.com/docs/nodejs/nodejs-debugging#_launch-configuration-support-for-npm-and-other-tools
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["--nolazy"],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Gatsby build",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceRoot}/node_modules/.bin/gatsby",
+      "args": ["build"],
+      "env": {
+        "PARCEL_WORKERS": "0",
+        "GATSBY_CPU_COUNT": "1"
+      },
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["--nolazy"],
+      "console": "integratedTerminal"
+    }
+  ]
+}
+```
