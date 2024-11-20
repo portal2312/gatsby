@@ -110,3 +110,40 @@ Apply `.vscode/launch.json`:
   ]
 }
 ```
+
+## Setup ESLint on workspace
+
+1.  Make the `eslint.config.mjs` file:
+
+    ```shell
+    pnpm create @eslint/config@latest
+    ```
+
+2.  Install packages:
+
+    ```shell
+    pnpm add --save-dev eslint globals @eslint/js typescript-eslint eslint-plugin-react
+    ```
+
+3.  Resolve the dependence `eslint-plugin-flowtype`:
+
+    ```shell
+    Failed to load plugin 'flowtype' declared in 'BaseConfig » /Users/mkkim/projects/portal2312/gatsby/node_modules/.pnpm/eslint-config-react-app@6.0.0_@typescript-es
+    lint+eslint-plugin@5.62.0_@typescript-eslint+pars_quwfol5nck5f7xypg3bpw7cfc4/node_modules/eslint-config-react-app/index.js': Package subpath
+    './lib/rules/no-unused-expressions' is not defined by "exports" in
+    /Users/mkkim/projects/portal2312/gatsby/node_modules/.pnpm/eslint-plugin-flowtype@5.10.0_eslint@9.15.0_jiti@1.21.6_/node_modules/eslint/package.json
+
+    failed Building development bundle - 10.851s
+    ERROR in Failed to load plugin 'flowtype' declared in 'BaseConfig » /Users/mkkim/projects/portal2312/gatsby/node_modules/.pnpm/eslint-config-react-app@6.0.0_@type
+    script-eslint+eslint-plugin@5.62.0_@typescript-eslint+pars_quwfol5nck5f7xypg3bpw7cfc4/node_modules/eslint-config-react-app/index.js': Package subpath
+    './lib/rules/no-unused-expressions' is not defined by "exports" in
+    /Users/mkkim/projects/portal2312/gatsby/node_modules/.pnpm/eslint-plugin-flowtype@5.10.0_eslint@9.15.0_jiti@1.21.6_/node_modules/eslint/package.json
+
+    Generating development JavaScript bundle failed
+    ```
+
+    Resolve:
+
+    ```shell
+    pnpm add --save-dev eslint-plugin-flowtype
+    ```
