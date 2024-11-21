@@ -28,4 +28,10 @@ export default [
   eslintPluginPrettierRecommended,
   // https://github.com/prettier/eslint-plugin-prettier
   eslintConfigPrettier,
+  {
+    rules: {
+      // https://github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/no-unescaped-entities.md
+      "react/no-unescaped-entities": ["off", { forbid: ["'"] }],
+    },
+  },
 ];

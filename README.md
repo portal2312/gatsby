@@ -166,3 +166,17 @@ Apply `.vscode/launch.json`:
 ## Setup deploy on workspace
 
 https://www.gatsbyjs.com/docs/how-to/previews-deploys-hosting/how-gatsby-works-with-github-pages/#deploying-to-a-path-with-pathprefix
+
+## Setup TypeScript and Gatsby
+
+Refer to [here](https://www.gatsbyjs.com/docs/how-to/custom-configuration/typescript).
+
+### CSS Modules
+
+만약 tailwindcss 사용 시, `gatsby-browser.js` 안에 `import "./src/styles/global.css"` 을 주석을 해야 기본 스타일로 적용됩니다.
+
+`src/module.css.d.ts`:
+
+```shell
+declare module "*.module.css";
+```

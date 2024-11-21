@@ -1,1 +1,2 @@
-import "./src/styles/global.css"
+// Generate by tailwindcss:
+import "./src/styles/global.css";
