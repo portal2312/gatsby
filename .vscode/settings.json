@@ -1,8 +1,14 @@
 {
   "cSpell.words": [
+    "Codegen",
     "Csvg",
     "doclist",
+    "graphqlsp",
     "trivago",
     "tseslint"
-  ]
+  ],
+  "graphql-config.load.configName": "graphql.config.ts",
+  // https://the-guild.dev/graphql/codegen/docs/guides/react-query
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }

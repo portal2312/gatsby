@@ -19,7 +19,11 @@ import tseslint from "typescript-eslint";
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
-  { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
+  {
+    files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
+    // https://eslint.org/docs/latest/use/configure/ignore
+    ignores: ["node_modules", "src/gql/*"],
+  },
   { languageOptions: { globals: globals.browser } },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,

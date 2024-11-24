@@ -2,12 +2,14 @@ import * as React from "react";
 
 import { Link } from "gatsby";
 
+import useSiteMetadata from "../hooks/useSiteMetadata";
 import {
   container,
   heading,
   navLinkItem,
   navLinkText,
   navLinks,
+  siteTitle,
 } from "./layout.module.css";
 
 interface LayoutProps {
@@ -16,8 +18,10 @@ interface LayoutProps {
 }
 
 const Layout: React.FC<LayoutProps> = ({ pageTitle, children }) => {
+  const data = useSiteMetadata();
   return (
     <div className={container}>
+      <header className={siteTitle}>{data?.title}</header>
       <nav>
         <ul className={navLinks}>
           <li className={navLinkItem}>
@@ -28,6 +32,11 @@ const Layout: React.FC<LayoutProps> = ({ pageTitle, children }) => {
           <li className={navLinkItem}>
             <Link className={navLinkText} to="/about">
               About
+            </Link>
+          </li>
+          <li className={navLinkItem}>
+            <Link className={navLinkText} to="/blog">
+              Blog
             </Link>
           </li>
         </ul>

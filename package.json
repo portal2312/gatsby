@@ -16,7 +16,8 @@
     "clean": "gatsby clean",
     "typecheck": "tsc --noEmit",
     "preinstall": "npx only-allow pnpm",
-    "deploy": "gatsby build --prefix-paths && gh-pages --no-history --dist public"
+    "deploy": "gatsby build --prefix-paths && gh-pages --no-history --dist public",
+    "codegen": "graphql-codegen --config graphql.config.ts"
   },
   "dependencies": {
     "@mdx-js/react": "^3.1.0",
@@ -37,7 +38,13 @@
     "tailwindcss": "^3.4.15"
   },
   "devDependencies": {
+    "@0no-co/graphqlsp": "^1.12.16",
     "@eslint/js": "^9.15.0",
+    "@graphql-codegen/cli": "5.0.3",
+    "@graphql-codegen/client-preset": "4.5.1",
+    "@graphql-codegen/schema-ast": "^4.1.0",
+    "@graphql-typed-document-node/core": "^3.2.0",
+    "@parcel/watcher": "^2.5.0",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/node": "^20.11.19",
     "@types/react": "^18.2.55",

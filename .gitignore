@@ -2,3 +2,9 @@ node_modules/
 .cache/
 public
 src/gatsby-types.d.ts
+
+# graphql-codegen
+src/gql/
+
+# graphql-codegen
+schema.gql
