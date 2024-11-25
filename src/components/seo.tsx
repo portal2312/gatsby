@@ -10,7 +10,7 @@ const Seo: React.FC<SeoProps> = ({ title }) => {
   const data = useSiteMetaData();
   return (
     <title>
-      {title} | {data?.title}
+      {title} | {data?.site?.siteMetadata?.title}
     </title>
   );
 };
