@@ -3,7 +3,7 @@ import * as React from "react";
 import useSiteMetaData from "../hooks/useSiteMetadata";
 
 interface SeoProps {
-  title: string;
+  title?: string | null;
 }
 
 const Seo: React.FC<SeoProps> = ({ title }) => {

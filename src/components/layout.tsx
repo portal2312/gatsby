@@ -13,7 +13,7 @@ import {
 } from "./layout.module.css";
 
 interface LayoutProps {
-  pageTitle: string;
+  pageTitle?: string | null;
   children: React.ReactNode;
 }
 
