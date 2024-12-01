@@ -11,33 +11,42 @@
     // Gatsby Debugging the Build Process:: VS Code Debugger (Manual Config)
     // https://www.gatsbyjs.com/docs/debugging-the-build-process/#vs-code-debugger-manual-config
     {
-      "name": "Gatsby develop",
+      "name": "pnpm: develop",
       "type": "node",
       "request": "launch",
-      "program": "${workspaceRoot}/node_modules/.bin/gatsby",
-      "args": ["develop"],
-      "skipFiles": ["<node_internals>/**"],
+      // https://code.visualstudio.com/docs/nodejs/nodejs-debugging#_launch-configuration-support-for-npm-and-other-tools
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["run", "develop"],
       "env": {
         "PARCEL_WORKERS": "0",
         "GATSBY_CPU_COUNT": "1"
       },
-      // https://code.visualstudio.com/docs/nodejs/nodejs-debugging#_launch-configuration-support-for-npm-and-other-tools
-      "runtimeExecutable": "pnpm",
-      "runtimeArgs": ["--nolazy"],
+      "skipFiles": ["<node_internals>/**"],
       "console": "integratedTerminal"
     },
     {
-      "name": "Gatsby build",
+      "name": "pnpm: build",
       "type": "node",
       "request": "launch",
-      "program": "${workspaceRoot}/node_modules/.bin/gatsby",
-      "args": ["build"],
+      "runtimeExecutable": "pnpm",
+      "runtimeArgs": ["run", "build"],
       "env": {
         "PARCEL_WORKERS": "0",
         "GATSBY_CPU_COUNT": "1"
       },
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "pnpm: deploy",
+      "type": "node",
+      "request": "launch",
       "runtimeExecutable": "pnpm",
-      "runtimeArgs": ["--nolazy"],
+      "runtimeArgs": ["run", "deploy"],
+      "env": {
+        "PARCEL_WORKERS": "0",
+        "GATSBY_CPU_COUNT": "1"
+      },
+      "skipFiles": ["<node_internals>/**"],
       "console": "integratedTerminal"
     }
   ]
